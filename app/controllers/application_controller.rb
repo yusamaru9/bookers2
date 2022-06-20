@@ -4,12 +4,12 @@ class ApplicationController < ActionController::Base
   
   
   def after_sign_in_path_for(resource)
-    books_path
+    user_path(current_user.id) #ログイン後のルート先はユーザー詳細画面show
   end
   
   
   def after_sign_out_path_for(resource)
-    about_path
+    root_path #ログアウトのルート先はトップページ
   end
 
   protected
