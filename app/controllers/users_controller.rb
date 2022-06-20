@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  
+  def create
+    
+  end
+  
   def index
     @user = User.find(params[:id])
     @books = @user.books
