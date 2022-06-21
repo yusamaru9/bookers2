@@ -1,3 +1,7 @@
+<%= render 'books/list', user: @user, book: @book %>
+
+
+
 <div>
   <p>Title：<%= @book.title %></p>
   <p>Opinion：<%= @book.body %></p>
@@ -12,4 +16,6 @@
 
 
 
+
 <%= link_to "削除", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+

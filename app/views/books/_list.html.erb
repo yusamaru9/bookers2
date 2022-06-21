@@ -2,7 +2,7 @@
 
     <div>
   
-    <%= image_tag @user.get_profile_image(100, 100) %>
+    <%= image_tag user.get_profile_image(100, 100) %>
   
   
      <table class="table">
@@ -10,22 +10,21 @@
       <tr></tr>
       <tr>
 	  <th>name</th>
-	  <th><%= @user.name %></th>
+	  <th><%= user.name %></th>
   </tr>
   <tr>
 	  <th>introduction</th>
-	  <th><%= @user.introduction %></th>
+	  <th><%= user.introduction %></th>
   </tr>
 </tbody></table>
 
- <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+ <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
 
 <h2>New Book</h2>
-  <%= form_with model: @book do |f| %>
+  <%= form_with model: book do |f| %>
     <h4>Title</h4>
       <%= f.text_field :title %>
     <h4>Opinion</h4>
       <%= f.text_area :body %></br>
     <%= f.submit 'Create Book' %>
   <% end %>
-  
