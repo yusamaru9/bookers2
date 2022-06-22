@@ -1,4 +1,4 @@
-<%= render 'books/list', user: @user, book: @book %>
+<%= render 'books/list', user: @user, book: @new_book %>
 
 <h2>Book detail</h2>
 <div>
@@ -17,10 +17,11 @@
   <p>Opinion：<%= @book.body %></p>
   
   
-  <%= link_to "edit", edit_book_path(@book.id), class: 'btn btn-success' %>
+  
   
   
   <% if @book.user == current_user %>
+    <%= link_to "Edit", edit_book_path(@book.id), class: 'btn btn-success' %>
     <%= link_to "Destroy", book_path(@book),class: 'btn btn-danger', method: :delete, "date-confirm" => "本当に削除しますか？" %>
   <% end %>
 </div>
