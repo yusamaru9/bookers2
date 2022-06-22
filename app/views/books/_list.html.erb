@@ -22,6 +22,7 @@
   </tr>
 </tbody></table>
 
+<button type="button" class="btn btn-outline-secondary">Secondary</button>
  <%= link_to "プロフィール編集", edit_user_path(user) %>
 
 <h2>New Book</h2>
@@ -31,4 +32,6 @@
     <h4>Opinion</h4>
       <%= f.text_area :body %></br>
     <%= f.submit 'Create Book' %>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    
   <% end %>

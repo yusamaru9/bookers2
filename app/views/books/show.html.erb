@@ -1,11 +1,21 @@
 <%= render 'books/list', user: @user, book: @book %>
 
-
+<h2>Book detail</h2>
 <div>
-  <p>ユーザーネーム：<%= @book.user.name %></p>
+  <%= link_to user_path(@book.user.id) do %>
+    <%= image_tag @book.user.get_profile_image(100,100) %>
+  <% end %>
+  <p><%= @book.user.name %></p>
   <p>Title：<%= @book.title %></p>
   <p>Opinion：<%= @book.body %></p>
-  <p>投稿ユーザー画像：<%= image_tag @book.user.get_profile_image(100,100) %></p>
+  
+  
+  <%= link_to "edit", edit_book_path(@book.id), class: 'btn btn-success' %>
+  
+  
+  
+  
+  <button type="button" class="btn btn-danger">Danger</button>
   <% if @book.user == current_user %>
     <%= link_to "削除", book_path(@book), method: :delete, "date-confirm" => "本当に削除しますか？" %>
   <% end %>
