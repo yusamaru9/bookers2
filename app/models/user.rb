@@ -11,8 +11,7 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   
   
-  validates :name, uniqueness: true
-  validates :name, length: { in: 2..20 }
+  validates :name, length: { in: 2..20 }, uniqueness: true
   validates :introduction, length: { maximum: 50 }
   
   

@@ -25,10 +25,11 @@
 </tbody></table>
 
 
-<!-- <i class="fas fa-user-cog"></i> Font Awesome fontawesome.com -->
 
-
- <%= link_to "プロフィール編集", edit_user_path(user), class: 'btn btn-outline-secondary' %>
+ <%= link_to edit_user_path(user), class: 'btn btn-outline-secondary btn-sm btn-block mb-3 sign_in' do %>
+   
+   <i class="fas fa-user-cog"></i>
+ <% end %>
 
 <h2>New Book</h2>
   <%= form_with model: book do |f| %>
@@ -41,3 +42,5 @@
    
     
   <% end %>
+  
+  
