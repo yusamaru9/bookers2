@@ -1,4 +1,6 @@
+<p id="notice"></p>
 <div class="container px-5 px-sm-0">
+  <div class="row">
   <%= render 'books/list', user: @user, book: @book %>
   <div class="col-md-8 offset-md-1">
     <h2>Books</h2>
@@ -12,24 +14,25 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              <% if @user == current_user.id %>
-              <% end %>
-              <% @books.each do |book| %>
+          <% @books.each do |book| %>
+            <tr>
+              <td>
                 <%= link_to user_path(book.user.id) do %>
-                  <p><%= image_tag book.user.get_profile_image(100, 100) %></p>
+                  <%= image_tag book.user.get_profile_image(100, 100) %>
                 <% end %>
               </td>
               <td>
                 <%= link_to book_path(book.id) do %>
                   <%= book.title %>
                 <% end %>
-                <p>Opinion <%= book.body %></p>
-              <% end %>
-            </td>
-          </tr>
+              </td>
+              <td>
+                <p><%= book.body %></p>
+              </td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
+  </div>
   </div>
 </div>
